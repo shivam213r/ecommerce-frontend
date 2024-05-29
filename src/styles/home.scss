@@ -1,0 +1,82 @@
+.home {
+    height: calc(100vh - 4rem);
+    width: 100%;
+
+    >section {
+        width: 100%;
+        margin: auto;
+        background: url("../assets/images/home.jpg") no-repeat center / cover;
+
+        height: 30rem;
+    }
+    h1{
+        width: 90%;
+        margin: 20px  auto;
+        @include heading(1px);
+        margin: top;
+        @include flex(row,space-between,center)
+    }
+    .findmore{
+        font-size: 1rem;
+    }
+    main{
+        width: 90%;
+        margin: 20px  auto;
+        display: flex;
+        flex: 1;
+        overflow-x: auto;
+        gap: 1rem;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+
+
+}
+
+.productcard{
+ width: 20rem;
+ height: 20rem;
+ padding: 1rem;
+ @include flex(column,flex-start,center,4px);
+ position: relative;
+ &:hover{
+    >div{
+        opacity: 1;
+    }
+ }
+ >img{
+  border-radius: 3px;
+  object-fit: cover;
+ }
+ span{
+    font-size: 700;
+    font-size: 1.2rem;
+
+ }
+ >div{
+    background-color: rgba(34, 33, 33, 0.136);
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    @include flex(row,center,center);
+
+    button{
+
+        @include flex;
+        border-style: none ;
+        border-radius: 100%;
+        background-color: $color2;
+        @include square(3rem);
+        font-size: 1.2rem;
+        transition: all 0.3s;
+        &:hover{
+            rotate: 10deg;
+        }
+    }
+ }
+}
